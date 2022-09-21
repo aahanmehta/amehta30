@@ -10,6 +10,8 @@ def diff21(n):
 def near_hundred(n):
   return abs(100-n) <= 10 or abs(200-n) <= 10
 
+def missing_char(str, n):
+   return str[:n] + str[n+1:]
 
 def pos_neg(a, b, negative):
   if negative:
@@ -47,4 +49,4 @@ def front3(str):
     return str*3
   return str[:3]*3
 
-print("hello")
+

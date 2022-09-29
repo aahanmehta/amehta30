@@ -1,5 +1,9 @@
 '''
-Team Smartans: Wilson Mach, Joshua Liu, Aahan Mehta
+Aahan Mehta, Shreya Roy
+SoftDev
+K05 -- bitsream
+2022-09-29
+time spent: 0.7
 DISCO:
 QCC:
 OPS SUMMARY:
@@ -16,13 +20,14 @@ def makeDict(filename):
     dict = {}
     file = open(filename)
     fileStr = file.read()
-    fileStr = fileStr[:-1]
-    print(fileStr)
+    file.close()
+    fileStr = fileStr.replace("\n","")
+    # print(fileStr)
     devoInfoStr = fileStr.split("@@@")
-    print(devoInfoStr)
+    # print(devoInfoStr)
     for devo in devoInfoStr:
         infos = devo.split("$$$")
-        print(infos)
+        # print(infos)
         key = int(infos[0])
         if key not in dict:
             dict[key] = []
@@ -39,16 +44,3 @@ def getRandKrew(nums):
     return [random.choice(nums[key]), key]
 
 print(getRandKrew(makeDict("krewes.txt")))
-
-def printRandKrew(nums):
-    x = getRandKrew(nums)
-    if x[0] == "empty dict":
-        print("empty dictionary")
-    if x[0] == "empty key":
-        print("dictionary has an empty key, which was randomly chosen")
-    if len(x) == 2:
-        print(x[0] + " from Pd. " + x[1])
-
-# printRandKrew(krewes1)
-# printRandKrew(krewes2)
-# printRandKrew(krewes3)

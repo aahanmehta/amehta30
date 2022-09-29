@@ -1,14 +1,7 @@
 '''
 Team Smartans: Wilson Mach, Joshua Liu, Aahan Mehta
 DISCO:
-    1. random.choice(n) returns a random element from n, which is a iterable object, like list or tuple
-    2. dict.keys() returns a view object of the keys in a dictionary, which means its not iterable.
-     Because of this, we have to typecast the view object into a list.
-     how to cast variables in python: type(object)
 QCC:
-How does choice pick a random element?
-Choice is more convenient in this case, since we don't have to do random shenanigans
-
 OPS SUMMARY:
     1. Check if dictionary is empty
     2. Pick a random key after making a list of the keys in dictionary
@@ -19,35 +12,23 @@ OPS SUMMARY:
 '''
 import random
 
-krewes1 = {2:[], 3:[]}
-krewes2 = {
-    2:["NICHOLAS",  "ANTHONY",  "BRIAN",  "SAMUEL",  "JULIA",  "YUSHA",  "CORINA",  "CRAIG",  "FANG MIN",  "JEFF",  "KONSTANTIN",  "AARON",  "VIVIAN",  "AYMAN",  "TALIA",  "FAIZA",  "ZIYING",  "YUK KWAN",  "DANIEL",  "WEICHEN",  "MAYA",  "ELIZABETH",  "ANDREW",  "VANSH",  "JONATHAN",  "ABID",  "WILLIAM",  "HUI",  "ANSON",  "KEVIN",  "DANIEL",  "IVAN",  "JASMINE",  "JEFFREY", "Ruiwen"],
-    7:["DIANA",  "DAVID",  "SAM",  "PRATTAY",  "ANNA",  "JING YI",  "ADEN",  "EMERSON",  "RUSSELL",  "JACOB",  "WILLIAM",  "NADA",  "SAMANTHA",  "IAN",  "MARC",  "ANJINI",  "JEREMY",  "LAUREN",  "KEVIN",  "RAVINDRA",  "SADI",  "EMILY",  "GITAE",  "MAY",  "MAHIR",  "VIVIAN",  "GABRIEL",  "BRIANNA",  "JUN HONG",  "JOSEPH",  "MATTHEW",  "JAMES",  "THOMAS",  "NICOLE",  "Karen"],
-    8:["ALEKSANDRA",  "NAKIB",  "AMEER",  "HENRY",  "DONALD",  "YAT LONG",  "SEBASTIAN",  "DAVID",  "YUKI",  "SHAFIUL",  "DANIEL",  "SELENA",  "JOSEPH",  "SHINJI",  "RYAN",  "APRIL",  "ERICA",  "JIAN HONG",  "VERIT",  "JOSHUA",  "WILSON",  "AAHAN",  "GORDON",  "JUSTIN",  "MAYA",  "FAIYAZ",  "SHREYA",  "ERIC",  "JEFFERY",  "BRIAN",  "KEVIN",  "SAMSON",  "BRIAN",  "HARRY",  "Wanying", "Kevin"]
-}
-krewes3 = {}
-
 def makeDict(filename):
     dict = {}
-    f = open(filename)
-    strFile = f.readline() #reads all contents of file
-    strAllDevos = strFile.split("@@@") #makes list of str of dvos with info separated by $$$
-    allDvosList = []
-    for i in strAllDevos:
-        if i != "\n": #avoids newline
-            allDvosList.append(tuple(i.split("$$$"))) #adds tuple of period,name and ducky
-    # print(allDvosList)
-    f.close()
-    for dvo in allDvosList:
-        key = dvo[0] #records pd no. as key
-        if key not in list(dict.keys()): #if key does not exist already,
-            dict[ key ] = [ dvo[1:]]; #make a new key, stores 2nd and 3rd index of tuple as new one with keypair
-        else: #if key exists,
-            dict[key] = dict.get(key) + [tuple(dvo[1:])] #then append new devo info to list with keypair
-    # print(dict)
-    return dict #returns a dictionary of tuples with pd as key.
+    file = open(filename)
+    fileStr = file.read()
+    fileStr = fileStr[:-1]
+    print(fileStr)
+    devoInfoStr = fileStr.split("@@@")
+    print(devoInfoStr)
+    for devo in devoInfoStr:
+        infos = devo.split("$$$")
+        print(infos)
+        key = int(infos[0])
+        if key not in dict:
+            dict[key] = []
+        dict[key].append((infos[1], infos[2]))
+    return dict
 
-# makeDict("krewes.txt")
 
 def getRandKrew(nums):
     if len(nums) == 0:

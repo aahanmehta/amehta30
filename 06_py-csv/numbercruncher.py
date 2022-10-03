@@ -6,14 +6,18 @@ K06 -- numbercruncher
 time spent: .9
 DISCO:
 - random.choices() can be used to weight choices
--
+- 
 -
 QCC:
-
+- 
 OPS SUMMARY:
-
-
-
+make_dict(filename): reads the file, splitting into unformatted strings 
+of each occupation and it's weight. Then a for loop splits each occupation
+    into its own key if it doesn't exist already, and sets the value to the
+    respective occupation's weight, and returns the dictionary.
+get_rand_weighted_krewe(nums): Checks if dictionary is empty.
+    If not, it picks one random occupation by choosing from the list of keys
+    and a list of their respective weights.
 '''
 
 import random
@@ -45,8 +49,8 @@ def make_dict(filename):
 def get_rand_weighted_krewe(nums):
     if(len(nums) == 0):
         return ["empty dict"]
-    key = random.choices(list(nums.keys()), weights=list(nums.values()), k=1)
-    return key
+    occupation = random.choices(list(nums.keys()), weights=list(nums.values()), k=1)
+    return occupation
 
 
 def get_rand_krewe(nums):

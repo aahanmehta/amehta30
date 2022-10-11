@@ -1,6 +1,7 @@
-# Clyde 'Thluffy' Sinclair
+# TNPG: Worship Warships, Samson, Joshua, Aahan
 # SoftDev
 # Oct 2022
+
 
 # DEMO 
 # basics of /static folder

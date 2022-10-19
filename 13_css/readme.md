@@ -1,7 +1,7 @@
-#Team Henali
-##SoftDev
-##K13 -- mimic
-##10-18-2022
+# Team Henali
+## SoftDev
+## K13 -- mimic
+## 10-18-2022
 time spent: 1
 
 Kewl Stuff

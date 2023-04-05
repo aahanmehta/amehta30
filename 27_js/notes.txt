@@ -5,17 +5,17 @@ K27 -- Basic functions in JavaScript
 
 DISCO
 -----------------------------------------------------------------
-* Ooooh, ___
-* Aaah-haa!  ____
+* JavaScript is kinda like java wow
+* to declare a function in js you have to say it's a function
+* if you install node, you don't need to use the dev console, you 
+use the console.log function
 * ...
 =================================================================
 
 QCC
 -----------------------------------------------------------------
-* Why...?
-* Huh?
-* Teh whah now?
-* ...
+* We're a little confused about what scheme's gotta do with js
+
 =================================================================
 
 

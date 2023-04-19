@@ -89,6 +89,22 @@ var stripe = function() {
 // FAC
 // GCD
 
+function fact (n) {
+  if (n < 2) return 1;
+  return n*(fact(n-1));
+}
+
+function fib (n) {
+  if (n < 2)return n;
+  return fib(n-1)+fib(n-2);
+}
+
+function gcd(a, b) {
+  if (b == 0) return a;
+  return gcd(b, a % b);
+
+}
+
 // In addition to the style shown above,
 //  you are encouraged to test drive the "arrow function syntax" as shown below.
 //  Note anything notable.
@@ -96,5 +112,7 @@ const myFxn = (param1, param2) => {
   // body
   return retVal;
 };
+
+red(addItem(fib(3)));
 
 

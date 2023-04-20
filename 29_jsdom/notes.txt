@@ -1,0 +1,15 @@
+Team Euliss Spikes :: Jeff Chen and Aahan Mehta
+SoftDev pd8
+K29 -- Getting more comfortable with the dev console and the DOM
+2023-04-20
+
+===================================================================
+DISCO:
+- we can't use a function as a parameter that we 
+- 
+
+QCC:
+Q: Can addEventListener run multiple functions?
+Q: What's the difference between calling the function directly
+in addEventListener versus using the parentheses?
+C(II): This is weird. 

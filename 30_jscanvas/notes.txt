@@ -1,0 +1,8 @@
+Team Purple Spikes: Joseph Wu and Aahan Mehta
+SoftDev pd8
+K30 -- canvas based JS drawing
+2023-04-24
+
+QCC:
+
+Disco:

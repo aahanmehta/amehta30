@@ -1,0 +1,12 @@
+Team Euliss Spikes :: Jeff Chen and Aahan Mehta
+SoftDev pd8
+K30 -- Getting more comfortable with the dev console and the DOM
+2023-04-25
+
+===================================================================
+DISCO:
+- Callbacks work like recursive calls. They keep the animation going after each call of drawDot.
+- 
+
+QCC:
+C: It seems weird that we have to cancel the animationFrame in drawDot and redefine requestID in the line immediately after.

@@ -1,12 +1,12 @@
 // Team Purple Spikes :: Joseph Wu, Aahan Mehta
 //SoftDev pd8
-//K31 -- canvas based JS animation
-//2023-04-25
+//K32 -- canvas based JS animation
+//2023-04-26
 
 var c = document.getElementById("playground");
 
-var dotButton = document.getElementById("buttonCircle");
-var stopButton = document.getElementById("buttonStop");
+var dotButton = document.getElementById("circle");
+var stopButton = document.getElementById("stop");
 var dvdButton = document.getElementById("dvd")
 
 var ctx = c.getContext("2d");
@@ -16,11 +16,12 @@ ctx.fillStyle = "black";
 var requestID;
 
 var clear = (e) => {
-  e.preventDefault();
+  // e.preventDefault();
   ctx.clearRect(0, 0, 500, 500);
 };
 
 var dvdLogoSetup = function() {
+  clear()
   window.cancelAnimationFrame(requestID);
   
   var rectWidth = 40;
@@ -36,7 +37,7 @@ var dvdLogoSetup = function() {
   logo.src = "logo_dvd.jpg";
   
   var dvdLogo = function() {
-    ctx.clear(0,0,c.width,c.height);
+    ctx.clearRect(0,0,c.width,c.height);
     ctx.drawImage(logo, rectX, rectY, rectWidth, rectHeight);
     if(rectX >= 460 || rectX <= 0){
       xVel *= -1;
@@ -46,7 +47,7 @@ var dvdLogoSetup = function() {
     }
     rectX += xVel;
     rectY += yVel;
-    requestID = window.requestAnimationFrame(requestID);  
+    requestID = window.requestAnimationFrame(dvdLogo);  
   };
   dvdLogo();
 }
